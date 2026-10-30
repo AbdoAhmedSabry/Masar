@@ -1,3 +1,5 @@
+import 'package:elearning/core/constants/app_colors.dart';
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomeButton extends StatelessWidget {
@@ -13,7 +15,7 @@ class CustomeButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onTap,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF151515),
+          backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
           elevation: 0,
           shape: RoundedRectangleBorder(
@@ -25,7 +27,7 @@ class CustomeButton extends StatelessWidget {
           children: [
             Text(
               text,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              style: AppTextStyles.titleMedium.copyWith(color: Colors.white),
             ),
             SizedBox(width: 15),
             Icon(Icons.arrow_forward_rounded, size: 24),

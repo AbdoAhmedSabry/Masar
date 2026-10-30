@@ -1,3 +1,5 @@
+import 'package:elearning/core/constants/app_colors.dart';
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeader extends StatelessWidget {
@@ -37,32 +39,17 @@ class HomeHeader extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Hello,",
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
-                    letterSpacing: -1,
-                  ),
+                  style: AppTextStyles.displayLarge.copyWith(letterSpacing: -1),
                 ),
                 const SizedBox(height: 2),
-                Text(
-                  text,
-                  style: const TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
-                    // letterSpacing: -1,
-                  ),
-                ),
+                Text(text, style: AppTextStyles.displayLarge),
                 const SizedBox(height: 12),
                 Text(
                   subtitle,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    height: 1.5,
-                    color: Color(0xFF777777),
+                  style: AppTextStyles.bodyLarge.copyWith(
+                    color: AppColors.textSecondary,
                   ),
                 ),
               ],
@@ -80,7 +67,7 @@ class AuthHeaderPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFF151515)
+      ..color = AppColors.headerDark
       ..style = PaintingStyle.fill;
 
     final path = Path();
@@ -99,7 +86,7 @@ class AuthHeaderPainter extends CustomPainter {
     canvas.drawPath(path, paint);
 
     final linePaint = Paint()
-      ..color = const Color(0xFF555555)
+      ..color = AppColors.headerStroke
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.2;
 
@@ -116,7 +103,7 @@ class AuthHeaderPainter extends CustomPainter {
     canvas.drawPath(decorativePath, linePaint);
 
     final circlePaint = Paint()
-      ..color = const Color(0xFF1D1D1D)
+      ..color = AppColors.headerCircle
       ..style = PaintingStyle.fill;
 
     canvas.drawCircle(

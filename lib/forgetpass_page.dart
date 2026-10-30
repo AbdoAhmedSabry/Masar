@@ -1,7 +1,9 @@
+import 'package:elearning/core/constants/app_colors.dart';
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:elearning/widgets/Custome_button.dart';
-import 'package:elearning/widgets/divider.dart';
+
 import 'package:elearning/widgets/header.dart';
-import 'package:elearning/widgets/social_button.dart';
+
 import 'package:elearning/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,7 @@ class ForgetPassPage extends StatelessWidget {
     final size = MediaQuery.sizeOf(context);
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFAFAFA),
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -53,10 +55,10 @@ class ForgetPassPage extends StatelessWidget {
                     Center(
                       child: TextButton(
                         onPressed: () {},
-                        child: const Text(
+                        child: Text(
                           'Back to login',
-                          style: TextStyle(
-                            color: Colors.black,
+                          style: AppTextStyles.bodyLarge.copyWith(
+                            color: AppColors.textPrimary,
                             decoration: TextDecoration.underline,
                             decorationThickness: 1.2,
                             fontSize: 15,

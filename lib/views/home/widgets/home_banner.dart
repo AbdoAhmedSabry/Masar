@@ -1,3 +1,5 @@
+import 'package:elearning/core/constants/app_colors.dart';
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeBanner extends StatelessWidget {
@@ -12,7 +14,7 @@ class HomeBanner extends StatelessWidget {
         width: double.infinity,
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-          color: const Color(0xFF111111),
+          color: AppColors.bannerBackground,
           borderRadius: BorderRadius.circular(18),
         ),
         child: Stack(
@@ -27,7 +29,7 @@ class HomeBanner extends StatelessWidget {
                 width: 110,
                 height: 110,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF3A3A3A),
+                  color: AppColors.bannerAccent,
                   borderRadius: BorderRadius.circular(100),
                 ),
               ),
@@ -50,12 +52,12 @@ class HomeBanner extends StatelessWidget {
                       vertical: 5,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF333333),
+                      color: AppColors.chipBackground,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Featured',
-                      style: TextStyle(
+                      style: AppTextStyles.bodySmall.copyWith(
                         color: Colors.white,
                         fontSize: 10,
                         fontWeight: FontWeight.w500,
@@ -66,13 +68,12 @@ class HomeBanner extends StatelessWidget {
                   const SizedBox(height: 10),
 
                   // Title
-                  const Text(
+                  Text(
                     'Master the new iOS features and APIs',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: AppTextStyles.bodyLarge.copyWith(
                       color: Colors.white,
-                      fontSize: 16,
                       fontWeight: FontWeight.w700,
                       height: 1.15,
                     ),
@@ -81,12 +82,12 @@ class HomeBanner extends StatelessWidget {
                   const SizedBox(height: 6),
 
                   // Description
-                  const Text(
+                  Text(
                     'Join the most popular iPhone course and learn all about it.',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Color(0xFFCCCCCC),
+                    style: AppTextStyles.bodySmall.copyWith(
+                      color: AppColors.textOnDarkMuted,
                       fontSize: 10,
                       height: 1.3,
                     ),
@@ -105,12 +106,12 @@ class HomeBanner extends StatelessWidget {
                 width: 38,
                 height: 38,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.surface,
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.arrow_forward_rounded,
-                  color: Colors.black,
+                  color: AppColors.textPrimary,
                   size: 22,
                 ),
               ),
@@ -125,7 +126,7 @@ class HomeBanner extends StatelessWidget {
               child: Icon(
                 Icons.school_rounded,
                 size: 45,
-                color: const Color(0xFFBDBDBD),
+                color: AppColors.disabled,
               ),
             ),
           ],

@@ -1,3 +1,5 @@
+import 'package:elearning/core/constants/app_colors.dart';
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:elearning/widgets/Custome_button.dart';
 import 'package:elearning/widgets/divider.dart';
 import 'package:elearning/widgets/header.dart';
@@ -13,7 +15,7 @@ class LoginPage extends StatelessWidget {
     final size = MediaQuery.sizeOf(context);
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFAFAFA),
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -64,10 +66,10 @@ class LoginPage extends StatelessWidget {
                           minimumSize: Size.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         ),
-                        child: const Text(
+                        child: Text(
                           'Forgot password?',
-                          style: TextStyle(
-                            color: Colors.black,
+                          style: AppTextStyles.bodyLarge.copyWith(
+                            color: AppColors.textPrimary,
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
                             decoration: TextDecoration.underline,
@@ -99,35 +101,40 @@ class LoginPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SocialButton(
-                          child: const Text(
-                            'f',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: SocialButton(
+                            child: Text(
+                              'f',
+                              style: AppTextStyles.headlineMedium.copyWith(
+                                fontSize: 30,
+                              ),
                             ),
+                            onTap: () {},
                           ),
-                          onTap: () {},
                         ),
 
                         const SizedBox(width: 20),
 
-                        SocialButton(
-                          child: const Text(
-                            'G',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600,
+                        Expanded(
+                          child: SocialButton(
+                            child: Text(
+                              'G',
+                              style: AppTextStyles.headlineMedium.copyWith(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
+                            onTap: () {},
                           ),
-                          onTap: () {},
                         ),
 
                         const SizedBox(width: 20),
 
-                        SocialButton(
-                          child: const Icon(Icons.apple, size: 30),
-                          onTap: () {},
+                        Expanded(
+                          child: SocialButton(
+                            child: const Icon(Icons.apple, size: 30),
+                            onTap: () {},
+                          ),
                         ),
                       ],
                     ),
@@ -139,19 +146,19 @@ class LoginPage extends StatelessWidget {
                     // =========================
                     RichText(
                       text: TextSpan(
-                        style: const TextStyle(
+                        style: AppTextStyles.bodyLarge.copyWith(
                           fontSize: 15,
-                          color: Color(0xFF777777),
+                          color: AppColors.textSecondary,
                         ),
                         children: [
                           const TextSpan(text: "Don't have an account?  "),
                           WidgetSpan(
                             child: GestureDetector(
                               onTap: () {},
-                              child: const Text(
+                              child: Text(
                                 'Sign Up  →',
-                                style: TextStyle(
-                                  color: Colors.black,
+                                style: AppTextStyles.bodyLarge.copyWith(
+                                  color: AppColors.textPrimary,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w700,
                                 ),

@@ -1,3 +1,5 @@
+import 'package:elearning/core/constants/app_colors.dart';
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class MainHeader extends StatelessWidget {
@@ -12,7 +14,6 @@ class MainHeader extends StatelessWidget {
   final String subtitle;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
     return SizedBox(
       height: height,
       child: Stack(
@@ -25,7 +26,11 @@ class MainHeader extends StatelessWidget {
           Positioned(
             left: 45,
             top: 55,
-            child: Icon(Icons.school_rounded, size: 52, color: Colors.black),
+            child: Icon(
+              Icons.school_rounded,
+              size: 52,
+              color: AppColors.textPrimary,
+            ),
           ),
 
           // Header text
@@ -34,10 +39,8 @@ class MainHeader extends StatelessWidget {
             top: 125,
             child: Text(
               text,
-              style: TextStyle(
+              style: AppTextStyles.displayLarge.copyWith(
                 fontSize: 34,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
                 letterSpacing: -1,
               ),
             ),
@@ -48,17 +51,14 @@ class MainHeader extends StatelessWidget {
             top: 175,
             child: Text(
               subtitle,
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.5,
-                color: Color(0xFF777777),
+              style: AppTextStyles.bodyLarge.copyWith(
+                color: AppColors.textSecondary,
               ),
             ),
           ),
         ],
       ),
     );
-    ;
   }
 }
 
@@ -68,7 +68,7 @@ class AuthHeaderPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFF151515)
+      ..color = AppColors.headerDark
       ..style = PaintingStyle.fill;
 
     final path = Path();
@@ -99,7 +99,7 @@ class AuthHeaderPainter extends CustomPainter {
     // =========================
 
     final linePaint = Paint()
-      ..color = const Color(0xFF555555)
+      ..color = AppColors.headerStroke
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.2;
 
@@ -123,7 +123,7 @@ class AuthHeaderPainter extends CustomPainter {
     // =========================
 
     final circlePaint = Paint()
-      ..color = const Color(0xFF1D1D1D)
+      ..color = AppColors.headerCircle
       ..style = PaintingStyle.fill;
 
     canvas.drawCircle(

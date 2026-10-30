@@ -1,3 +1,5 @@
+import 'package:elearning/core/constants/app_colors.dart';
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class Dividerw extends StatelessWidget {
@@ -7,21 +9,21 @@ class Dividerw extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(child: Divider(color: Color(0xFFD0D0D0), thickness: 1)),
+        const Expanded(child: Divider(color: AppColors.divider, thickness: 1)),
 
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             'or',
-            style: TextStyle(
-              color: Colors.grey.shade600,
+            style: AppTextStyles.bodyLarge.copyWith(
+              color: AppColors.textSecondary,
               fontSize: 15,
               fontWeight: FontWeight.w500,
             ),
           ),
         ),
 
-        const Expanded(child: Divider(color: Color(0xFFD0D0D0), thickness: 1)),
+        const Expanded(child: Divider(color: AppColors.divider, thickness: 1)),
       ],
     );
   }

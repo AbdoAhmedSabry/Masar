@@ -1,3 +1,5 @@
+import 'package:elearning/core/constants/app_colors.dart';
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeSearchBar extends StatelessWidget {
@@ -17,22 +19,25 @@ class HomeSearchBar extends StatelessWidget {
     return Container(
       height: 50,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: const Color(0xFFE0E0E0), width: 1),
+        border: Border.all(color: AppColors.border, width: 1),
       ),
       child: TextField(
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: const TextStyle(color: Color(0xFF8A8A8A), fontSize: 17),
+          hintStyle: AppTextStyles.bodyLarge.copyWith(
+            color: AppColors.hintText,
+            fontSize: 17,
+          ),
           prefixIcon: Icon(
             prefixIcon,
-            color: const Color(0xFF555555),
+            color: AppColors.iconSecondary,
             size: 24,
           ),
           suffixIcon: suffixIcon == null
               ? null
-              : Icon(suffixIcon, color: const Color(0xFF555555), size: 24),
+              : Icon(suffixIcon, color: AppColors.iconSecondary, size: 24),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 18,

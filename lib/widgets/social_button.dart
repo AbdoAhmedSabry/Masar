@@ -1,3 +1,4 @@
+import 'package:elearning/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SocialButton extends StatelessWidget {
@@ -15,9 +16,9 @@ class SocialButton extends StatelessWidget {
         width: 68,
         height: 58,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.surface,
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(color: const Color(0xFFD8D8D8)),
+          border: Border.all(color: AppColors.border),
         ),
         alignment: Alignment.center,
         child: child,

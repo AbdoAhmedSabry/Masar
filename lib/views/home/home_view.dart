@@ -1,8 +1,8 @@
+import 'package:elearning/core/theme/app_text_styles.dart';
 import 'package:elearning/views/home/widgets/course_card.dart';
 import 'package:elearning/views/home/widgets/home_banner.dart';
 import 'package:elearning/views/home/widgets/home_header.dart';
 import 'package:elearning/views/home/widgets/home_search_bar.dart';
-import 'package:elearning/widgets/header.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -25,16 +25,13 @@ class HomeView extends StatelessWidget {
             child: HomeSearchBar(hintText: 'Search', prefixIcon: Icons.search),
           ),
           HomeBanner(),
-          Text(
-            "Popular Courses",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
+          Text("Popular Courses", style: AppTextStyles.titleLarge),
           CourseCardWidget(
             courseImageUrl: 'assets/images/flu.jpg',
             title: 'UI/UX Design',
             description: 'Learn UI/UX Design',
             instructorName: 'John Doe',
-            instructorImageUrl:"assets/images/abdp.jpg",
+            instructorImageUrl: "assets/images/abdp.jpg",
           ),
         ],
       ),
