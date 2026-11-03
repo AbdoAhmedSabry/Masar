@@ -12,28 +12,33 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
-      body: Column(
-        children: [
-          HomeHeader(
-            height: size.height * 0.22,
-            text: 'AbdElrahman',
-            subtitle: 'Keep Learning to Improve Yourself',
-          ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: HomeSearchBar(hintText: 'Search', prefixIcon: Icons.search),
-          ),
-          HomeBanner(),
-          Text("Popular Courses", style: AppTextStyles.titleLarge),
-          CourseCardWidget(
-            courseImageUrl: 'assets/images/flu.jpg',
-            title: 'UI/UX Design',
-            description: 'Learn UI/UX Design',
-            instructorName: 'John Doe',
-            instructorImageUrl: "assets/images/abdp.jpg",
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            HomeHeader(
+              height: size.height * 0.22,
+              text: 'AbdElrahman',
+              subtitle: 'Keep Learning to Improve Yourself',
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: HomeSearchBar(
+                hintText: 'Search',
+                prefixIcon: Icons.search,
+              ),
+            ),
+            HomeBanner(),
+            Text("Popular Courses", style: AppTextStyles.titleLarge),
+            CourseCardWidget(
+              courseImageUrl: 'assets/images/flu.jpg',
+              title: 'UI/UX Design',
+              description: 'Learn UI/UX Design',
+              instructorName: 'John Doe',
+              instructorImageUrl: "assets/images/abdp.jpg",
+            ),
+          ],
+        ),
       ),
     );
   }

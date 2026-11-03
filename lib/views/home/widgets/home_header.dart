@@ -18,34 +18,55 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
+      width: double.infinity,
       child: Stack(
         children: [
-          const Positioned.fill(
-            child: CustomPaint(painter: AuthHeaderPainter()),
-          ),
+          // Background painter
+          Positioned.fill(child: CustomPaint(painter: HomeHeaderPainter())),
 
-          const Positioned(
-            right: 30,
-            top: 65,
-            child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/abdp.jpg'),
-              radius: 35,
+          // User Avatar
+          Positioned(
+            top: 25,
+            right: 25,
+            child: Container(
+              padding: const EdgeInsets.all(3),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+              child: CircleAvatar(
+                radius: 30,
+                backgroundColor: Colors.grey,
+                backgroundImage: AssetImage("assets/images/abdp.jpg"),
+              ),
             ),
           ),
-
-          Positioned(
-            left: 30,
-            top: 65,
+          // Header content
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Hello,",
-                  style: AppTextStyles.displayLarge.copyWith(letterSpacing: -1),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.school_rounded,
+                      size: 52,
+                      color: AppColors.textPrimary,
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        text,
+                        style: AppTextStyles.displayLarge.copyWith(
+                          fontSize: 34,
+                          letterSpacing: -1,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 2),
-                Text(text, style: AppTextStyles.displayLarge),
-                const SizedBox(height: 12),
+                const SizedBox(height: 10),
                 Text(
                   subtitle,
                   style: AppTextStyles.bodyLarge.copyWith(
@@ -61,8 +82,8 @@ class HomeHeader extends StatelessWidget {
   }
 }
 
-class AuthHeaderPainter extends CustomPainter {
-  const AuthHeaderPainter();
+class HomeHeaderPainter extends CustomPainter {
+  const HomeHeaderPainter();
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -71,17 +92,32 @@ class AuthHeaderPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     final path = Path();
+
     path.moveTo(size.width * 0.62, 0);
     path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height * 0.58);
+    path.lineTo(size.width, size.height * 0.62);
+
     path.cubicTo(
       size.width * 0.82,
-      size.height * 0.55,
-      size.width * 0.74,
-      size.height * 0.30,
-      size.width * 0.62,
+      size.height * 0.60,
+      size.width * 0.70,
+      size.height * 0.43,
+      size.width * 0.63,
+      size.height * 0.25,
+    );
+
+    path.cubicTo(
+      size.width * 0.59,
+      size.height * 0.15,
+      size.width * 0.56,
+      size.height * 0.07,
+      size.width * 0.53,
       0,
     );
+
+    path.close();
+
+    canvas.drawPath(path, paint);
     path.close();
     canvas.drawPath(path, paint);
 

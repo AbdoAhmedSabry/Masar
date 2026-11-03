@@ -70,14 +70,11 @@ class AuthHeaderPainter extends CustomPainter {
     final paint = Paint()
       ..color = AppColors.headerDark
       ..style = PaintingStyle.fill;
-
     final path = Path();
 
     // Start from top-right area
     path.moveTo(size.width * 0.62, 0);
-
     path.lineTo(size.width, 0);
-
     path.lineTo(size.width, size.height * 0.58);
 
     // Main organic curve
@@ -89,9 +86,7 @@ class AuthHeaderPainter extends CustomPainter {
       size.width * 0.62,
       0,
     );
-
     path.close();
-
     canvas.drawPath(path, paint);
 
     // =========================
@@ -102,7 +97,6 @@ class AuthHeaderPainter extends CustomPainter {
       ..color = AppColors.headerStroke
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.2;
-
     final decorativePath = Path();
 
     decorativePath.moveTo(size.width * 0.59, 0);
@@ -115,13 +109,11 @@ class AuthHeaderPainter extends CustomPainter {
       size.width * 0.80,
       size.height * 0.30,
     );
-
     canvas.drawPath(decorativePath, linePaint);
 
     // =========================
     // Small decorative circle
     // =========================
-
     final circlePaint = Paint()
       ..color = AppColors.headerCircle
       ..style = PaintingStyle.fill;
